@@ -224,7 +224,13 @@ if (!feePayer) {
 const feePayerWallet = run('solana', ['address', '-k', feePayer], { silent: true });
 run('solana', ['airdrop', '10', feePayerWallet, '--url', LOCAL_RPC]);
 
-const activeMint = mint || createMint(feePayer);
+let activeMint = mint;
+if (!activeMint || !accountExists(activeMint)) {
+  if (activeMint) {
+    console.warn(`Configured mint was not found on localnet, creating a fresh test mint: ${activeMint}`);
+  }
+  activeMint = createMint(feePayer);
+}
 
 if (setupPlan.shouldUpdateEnv) {
   updateEnvFile(envPath, {
