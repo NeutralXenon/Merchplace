@@ -371,10 +371,16 @@ export default function ListingDetailPage({
     danger: styles.noticeDanger,
   };
 
+  const completedStatusLabel = isBuyer ? 'Received' : 'Sold';
+  const soldNoticeCopy = isBuyer
+    ? 'You confirmed receipt. Escrow has been released to the seller.'
+    : isOwner
+      ? 'The buyer confirmed receipt. Funds have been released.'
+      : 'This item has been sold and delivered.';
   const statusLabel: Record<string, string> = {
     available: 'Available',
     in_escrow: 'In Escrow',
-    sold: 'Sold',
+    sold: completedStatusLabel,
     cancelled: 'Cancelled',
   };
   const statusClass: Record<string, string> = {
@@ -394,7 +400,7 @@ export default function ListingDetailPage({
     confirm: [
       { label: 'Release to seller', value: `${sellerReceives} USDC`, tone: 'success' },
       { label: 'Protection fee', value: `${fee} USDC` },
-      { label: 'Listing status', value: 'Sold' },
+      { label: 'Receipt status', value: 'Received' },
     ],
     cancelPurchase: [
       { label: 'Refund to buyer', value: `${total} USDC`, tone: 'success' },
@@ -413,11 +419,11 @@ export default function ListingDetailPage({
       actionLabel: 'Sign purchase',
     },
     confirm: {
-      title: 'Release escrow',
+      title: 'Confirm receipt',
       subtitle: shipment
-        ? 'Confirm only after the package is in hand. This releases seller funds and marks the item as sold.'
+        ? 'Confirm only after the package is in hand. This releases seller funds and marks the item as received.'
         : 'No tracking is saved yet. Confirm only if the item is already in hand.',
-      actionLabel: 'Release escrow',
+      actionLabel: 'I received it',
     },
     cancelPurchase: {
       title: 'Cancel purchase',
@@ -614,7 +620,7 @@ export default function ListingDetailPage({
                       className={`btn btn-primary btn-lg ${styles.splitAction}`}
                       onClick={() => setReviewAction('confirm')}
                     >
-                      Confirm receipt
+                      Mark as received
                     </button>
                     <button
                       type="button"
@@ -636,7 +642,7 @@ export default function ListingDetailPage({
                 {listing.status === 'sold' && (
                   <div className={styles.soldNotice}>
                     <span aria-hidden="true" />
-                    <p>This item has been sold and delivered.</p>
+                    <p>{soldNoticeCopy}</p>
                   </div>
                 )}
 

@@ -193,7 +193,15 @@ export default function ProfilePage() {
         ) : activeItems.length > 0 ? (
           <div className={styles.listingGrid}>
             {activeItems.map((listing) => (
-              <ListingCard key={listing.id} listing={listing} />
+              <ListingCard
+                key={listing.id}
+                listing={listing}
+                statusLabelOverride={
+                  activeTab === 'purchases' && listing.status === 'sold'
+                    ? 'Received'
+                    : undefined
+                }
+              />
             ))}
           </div>
         ) : (

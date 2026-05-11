@@ -31,7 +31,12 @@ const STATUS_LABELS: Record<string, string> = {
   cancelled: 'Cancelled',
 };
 
-export function ListingCard({ listing }: { listing: ListingData }) {
+type ListingCardProps = {
+  listing: ListingData;
+  statusLabelOverride?: string;
+};
+
+export function ListingCard({ listing, statusLabelOverride }: ListingCardProps) {
   const priceFormatted = (listing.priceUsdc / 1_000_000).toFixed(2);
   const shippingFormatted = (listing.shippingCost / 1_000_000).toFixed(2);
   const shippingMethod = getShippingMethodDisplay(listing.shippingMethod, listing.shippingCost);
@@ -70,7 +75,7 @@ export function ListingCard({ listing }: { listing: ListingData }) {
         )}
         <div className={styles.statusBadge}>
           <span className={`badge ${statusClass}`}>
-            {STATUS_LABELS[listing.status]}
+            {statusLabelOverride ?? STATUS_LABELS[listing.status]}
           </span>
         </div>
         </div>

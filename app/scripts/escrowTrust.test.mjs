@@ -32,6 +32,16 @@ test('returns role-specific in-escrow notices', () => {
   assert.equal(sellerNotice.action, 'Add tracking once shipped');
 });
 
+test('returns buyer-specific completed receipt copy', () => {
+  const buyerNotice = getEscrowRoleNotice('sold', 'buyer', true);
+  assert.equal(buyerNotice.title, 'Receipt confirmed');
+  assert.equal(buyerNotice.action, 'Purchase complete');
+
+  const sellerNotice = getEscrowRoleNotice('sold', 'seller', true);
+  assert.equal(sellerNotice.title, 'Item sold');
+  assert.equal(sellerNotice.action, 'Sale complete');
+});
+
 test('builds high-stakes signing checklists', () => {
   assert.deepEqual(getReviewChecklist('buy', true), [
     'Deposit goes into Merchplace escrow, not directly to the seller.',

@@ -85,6 +85,24 @@ export function getEscrowRoleNotice(
   }
 
   if (status === 'sold') {
+    if (role === 'buyer') {
+      return {
+        title: 'Receipt confirmed',
+        body: 'You confirmed the item is in hand and seller funds have been released.',
+        action: 'Purchase complete',
+        tone: 'success',
+      };
+    }
+
+    if (role === 'seller') {
+      return {
+        title: 'Item sold',
+        body: 'The buyer confirmed receipt and your escrow funds have been released.',
+        action: 'Sale complete',
+        tone: 'success',
+      };
+    }
+
     return {
       title: 'Escrow released',
       body: 'The buyer confirmed receipt and seller funds have been released.',
