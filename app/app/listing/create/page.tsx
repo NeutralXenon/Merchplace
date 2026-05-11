@@ -173,6 +173,7 @@ export default function CreateListingPage() {
     const saved = await createListingApi(payload);
     setCreatedListingId(saved.id || fallbackListingId);
     saveLocalListing(saved);
+    window.dispatchEvent(new Event('merchplace:listings-updated'));
   };
 
   const retryMetadataSync = async () => {

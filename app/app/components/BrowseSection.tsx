@@ -66,6 +66,26 @@ export function BrowseSection() {
     loadListings();
   }, [loadListings]);
 
+  useEffect(() => {
+    const refreshVisibleListings = () => {
+      if (document.visibilityState === 'visible') {
+        loadListings();
+      }
+    };
+
+    window.addEventListener('focus', loadListings);
+    window.addEventListener('merchplace:listings-updated', loadListings);
+    document.addEventListener('visibilitychange', refreshVisibleListings);
+    const interval = window.setInterval(loadListings, 5_000);
+
+    return () => {
+      window.removeEventListener('focus', loadListings);
+      window.removeEventListener('merchplace:listings-updated', loadListings);
+      document.removeEventListener('visibilitychange', refreshVisibleListings);
+      window.clearInterval(interval);
+    };
+  }, [loadListings]);
+
   const displayListings = listings;
 
   return (
