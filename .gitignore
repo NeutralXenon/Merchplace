@@ -1,0 +1,26 @@
+.anchor
+.DS_Store
+target
+**/*.rs.bk
+node_modules
+test-ledger
+.yarn
+.superpowers
+.superstack
+app/.git-local-backup
+codex-session.jsonl
+claude-session.jsonl
+*.log
+
+# Local secrets and generated validator/deploy keys
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+!**/.env.*.example
+**/*keypair*.json
+
+# Submission working files too large for GitHub
+docs/submissions/video/*.avi

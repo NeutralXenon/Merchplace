@@ -1,0 +1,44 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Merchplace artifact logo</title>
+  <desc id="desc">A liquid glass artifact with violet and mint onchain ribbons.</desc>
+  <defs>
+    <linearGradient id="glass" x1="42" y1="36" x2="118" y2="124" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF8" stop-opacity="0.32"/>
+      <stop offset="0.48" stop-color="#FFFDF8" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#8FEBC3" stop-opacity="0.16"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="39" y1="33" x2="121" y2="127" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2EDE4" stop-opacity="0.56"/>
+      <stop offset="0.55" stop-color="#F2EDE4" stop-opacity="0.23"/>
+      <stop offset="1" stop-color="#F2EDE4" stop-opacity="0.38"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="62" y1="50" x2="104" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="16" y="16" width="128" height="128" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="#000000" flood-opacity="0.34"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#7C5CFF" flood-opacity="0.12"/>
+    </filter>
+    <filter id="ribbonGlow" x="22" y="48" width="116" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <rect x="40" y="40" width="80" height="80" rx="21" transform="rotate(-8 80 80)" fill="url(#glass)"/>
+    <rect x="40" y="40" width="80" height="80" rx="21" transform="rotate(-8 80 80)" stroke="url(#edge)" stroke-width="2.4"/>
+    <path d="M61 53C73 47 91 43 106 46" stroke="url(#shine)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <rect x="34" y="34" width="92" height="92" rx="26" transform="rotate(18 80 80)" stroke="#F2EDE4" stroke-opacity="0.28" stroke-width="3"/>
+
+  <g filter="url(#ribbonGlow)" stroke-linecap="round">
+    <path d="M35 73C58 65 84 59 125 57" stroke="#7C5CFF" stroke-width="7"/>
+    <path d="M34 94C60 98 91 93 127 83" stroke="#8FEBC3" stroke-width="7"/>
+  </g>
+</svg>

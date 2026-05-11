@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:20,000
+Solana event merch still trades through DMs and trust. Merchplace makes those trades escrowed, trackable, and event-specific.
+
+2
+00:00:20,000 --> 00:00:40,000
+Sellers list event merch. Buyers deposit USDC into escrow. Sellers add tracking. Buyers release funds when the item arrives.
+
+3
+00:00:40,000 --> 00:01:20,000
+Seller flow: create a listing with event context, photos, price, and carrier shipping. Metadata goes live after backend verification.
+
+4
+00:01:20,000 --> 00:02:00,000
+Buyer flow: open the listing, review escrow math and risk notes, buy the item, and watch the status move to in escrow.
+
+5
+00:02:00,000 --> 00:02:25,000
+Fulfillment flow: seller adds tracking, buyer reviews delivery context, then confirms receipt to release funds.
+
+6
+00:02:25,000 --> 00:02:50,000
+Technical proof: Anchor program functions and localnet smoke tests cover create, buy, confirm, buyer cancellation, and seller cancellation.
+
+7
+00:02:50,000 --> 00:03:00,000
+Merchplace is starting with Breakpoint and Colosseum drops, then expanding to Superteam and Solana event shelves.

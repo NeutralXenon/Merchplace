@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Merchplace Legends.fun Submission</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #11100e;
+        --panel: #171613;
+        --line: rgba(245, 236, 220, 0.14);
+        --text: #f2ede4;
+        --muted: #b8ad9f;
+        --dim: #7f7569;
+        --violet: #7c5cff;
+        --mint: #8febc3;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(rgba(245, 236, 220, 0.025) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(245, 236, 220, 0.02) 1px, transparent 1px),
+          var(--bg);
+        background-size: 42px 42px;
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      main {
+        width: min(1080px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 56px 0 72px;
+      }
+
+      header {
+        margin-bottom: 32px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(42px, 8vw, 84px);
+        line-height: 0.9;
+        letter-spacing: -0.07em;
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        font-size: 24px;
+        letter-spacing: -0.03em;
+      }
+
+      h3 {
+        margin: 22px 0 8px;
+        font-size: 17px;
+      }
+
+      p {
+        margin: 0 0 14px;
+        color: var(--muted);
+      }
+
+      .tagline {
+        color: var(--mint);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      section,
+      .card {
+        background: color-mix(in srgb, var(--panel) 92%, transparent);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 22px;
+      }
+
+      section {
+        margin-bottom: 18px;
+      }
+
+      .field {
+        display: grid;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+
+      .label {
+        color: var(--dim);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .value {
+        color: var(--text);
+        font-size: 15px;
+      }
+
+      .copybox {
+        white-space: pre-wrap;
+        color: var(--text);
+        background: rgba(255, 252, 244, 0.04);
+        border: 1px solid rgba(245, 236, 220, 0.1);
+        border-radius: 6px;
+        padding: 16px;
+      }
+
+      code {
+        color: var(--mint);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+
+      ul,
+      ol {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      li + li {
+        margin-top: 6px;
+      }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border: 1px solid rgba(143, 235, 195, 0.24);
+        border-radius: 999px;
+        color: var(--mint);
+        background: rgba(143, 235, 195, 0.08);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .missing {
+        border-color: rgba(230, 180, 94, 0.34);
+      }
+
+      .missing .status {
+        color: #e6b45e;
+        border-color: rgba(230, 180, 94, 0.3);
+        background: rgba(230, 180, 94, 0.08);
+      }
+
+      @media (max-width: 760px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="tagline">Legends.fun submission draft</p>
+        <h1>Merchplace</h1>
+        <p>
+          Event merch, verified onchain. A Solana marketplace for event
+          artifacts with wallet-signed USDC escrow, shipping context, and
+          buyer-controlled receipt release.
+        </p>
+      </header>
+
+      <section>
+        <h2>Copy-Paste Fields</h2>
+        <div class="grid">
+          <div class="field">
+            <div class="label">Product name</div>
+            <div class="value">Merchplace</div>
+          </div>
+          <div class="field">
+            <div class="label">Category</div>
+            <div class="value">Consumer / Marketplace / Solana payments</div>
+          </div>
+          <div class="field">
+            <div class="label">Short tagline</div>
+            <div class="value">
+              Event merch marketplace with wallet-signed USDC escrow.
+            </div>
+          </div>
+          <div class="field">
+            <div class="label">One-liner</div>
+            <div class="value">
+              Merchplace lets Solana event attendees buy and sell limited merch
+              with transparent escrow, carrier-priced shipping, and receipt-based
+              settlement.
+            </div>
+          </div>
+        </div>
+
+        <h3>Short Description</h3>
+        <div class="copybox">Merchplace is a Solana-native marketplace for limited event merch: Breakpoint shirts, Colosseum winner gear, Superteam contributor drops, badges, caps, bags, and other collector artifacts. Sellers publish wallet-signed listings, buyers deposit USDC into escrow, and funds release only after the buyer confirms receipt.</div>
+
+        <h3>Full Description</h3>
+        <div class="copybox">Solana events create scarce physical artifacts, but the resale flow is still mostly DMs, Discord trust, and manual payments. That works for friends, but it breaks down for collectors who want provenance, shipping clarity, and payment protection before buying a limited shirt, cap, badge, bag, or team drop.
+
+Merchplace is a marketplace for Solana event merch. Sellers create listings with item details, event context, images, condition, price, and a fixed carrier shipping method. Buyers see the full USDC total before signing: item price, shipping, and a 5% protection/platform fee. When they buy, USDC moves into a program-controlled escrow vault instead of going directly to the seller.
+
+The Solana part is not decorative. The Anchor program handles listing creation, escrow funding, buyer cancellation, receipt confirmation, seller proceeds, and treasury fee release. Off-chain Supabase metadata stores the rich marketplace content, while the on-chain listing stores the metadata hash, seller, buyer, price, shipping cost, mint, and status. Backend APIs verify confirmed on-chain state before accepting public listing or status updates.
+
+The current MVP includes browse, sell, listing detail, profile, wallet auth, image upload, event drop pages, shipment tracking, escrow guidance, dispute/timeout copy, and localnet lifecycle smoke tests for create, buy, receipt confirmation, buyer cancellation, and seller cancellation. The launch wedge is event-specific shelves, starting with Breakpoint and Colosseum inventory.
+
+Merchplace is already deployed and smoke-tested on devnet, with a full generated-wallet lifecycle covering create listing, buy, shipment tracking, and receipt confirmation. Next, it needs a hosted app URL, a public GitHub repo, and real seller seed inventory. The goal is to turn Solana event merch into a trustable, collectible marketplace instead of a scattered chat-channel trade.</div>
+
+        <h3>Why Solana</h3>
+        <div class="copybox">Merchplace uses Solana for the trust boundary that matters: custody and settlement. Buyers can verify that their USDC is held in escrow, sellers can see a wallet-signed listing and status trail, and the marketplace can sync off-chain metadata only after confirmed on-chain state. Fast, low-cost transactions make small physical-item sales practical without hiding payment state behind a centralized marketplace ledger.</div>
+
+        <h3>Technical Highlights</h3>
+        <ul>
+          <li>Anchor escrow program with listing PDA and USDC escrow vault.</li>
+          <li>5% buyer protection/platform fee represented as 500 basis points.</li>
+          <li>Verified state transitions for create, buy, confirm receipt, buyer cancellation, and seller cancellation.</li>
+          <li>Supabase metadata, image storage, listing event logs, and shipping/tracking API.</li>
+          <li>Event drop pages for curated launch inventory, including Breakpoint and Colosseum shelves.</li>
+          <li>Localnet smoke tests for full lifecycle, buyer cancellation, and seller cancellation.</li>
+          <li>Verified devnet program at <code>BWM5Sppg3Qu2mZCGM9ZiwWxDe9st3y4x3rb4Yur7Hauj</code>.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Submission Links And Proof</h2>
+        <div class="grid">
+          <div class="card missing">
+            <span class="status">Missing</span>
+            <h3>Public demo URL</h3>
+            <p>
+              Judges need a hosted product link. Deploy the Next app with devnet
+              environment variables and paste the URL here.
+            </p>
+          </div>
+          <div class="card missing">
+            <span class="status">Missing</span>
+            <h3>Public GitHub repo</h3>
+            <p>
+              This app repository currently has no remote configured. Push it to
+              a public GitHub repo before final submission.
+            </p>
+          </div>
+          <div class="card">
+            <span class="status">Ready</span>
+            <h3>Demo video</h3>
+            <p>
+              Local exports exist in <code>docs/submissions/video/</code>,
+              including <code>merchplace-demo-video.m4v</code>,
+              <code>merchplace-demo-video.mov</code>, captions, and thumbnail.
+            </p>
+          </div>
+          <div class="card missing">
+            <span class="status">Missing</span>
+            <h3>Founder/team handles</h3>
+            <p>
+              Add founder names, roles, X handles, GitHub profiles, and any
+              Superteam/community affiliation.
+            </p>
+          </div>
+          <div class="card">
+            <span class="status">Ready</span>
+            <h3>Devnet program</h3>
+            <p>
+              Program ID <code>BWM5Sppg3Qu2mZCGM9ZiwWxDe9st3y4x3rb4Yur7Hauj</code>.
+              Full devnet lifecycle smoke passed with Supabase sync and final
+              sold status.
+            </p>
+          </div>
+          <div class="card">
+            <span class="status">Ready</span>
+            <h3>Current status</h3>
+            <p>
+              MVP is devnet-ready. Mainnet is intentionally blocked until
+              production RPC, mainnet USDC mint, treasury, and auth secret are
+              configured.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>3-Minute Demo Script</h2>
+        <ol>
+          <li>
+            <strong>0:00-0:20 Hook:</strong> "Solana events create limited merch
+            that people actually care about, but resale still happens through DMs
+            and trust. Merchplace makes those trades escrowed, trackable, and
+            event-specific."
+          </li>
+          <li>
+            <strong>0:20-0:40 Overview:</strong> Show the homepage and explain:
+            sellers list event merch, buyers deposit USDC into escrow, sellers add
+            tracking, and buyers release funds when the item arrives.
+          </li>
+          <li>
+            <strong>0:40-1:20 Seller flow:</strong> Connect wallet, open Sell,
+            create a listing with event, photos, price, and carrier shipping.
+            Mention backend verification before metadata goes live.
+          </li>
+          <li>
+            <strong>1:20-2:00 Buyer flow:</strong> Open listing detail, show the
+            escrow math and risk notes, buy the item, and show status moving to
+            in escrow.
+          </li>
+          <li>
+            <strong>2:00-2:25 Fulfillment flow:</strong> Seller adds tracking,
+            buyer reviews it, then confirms receipt. Funds release to seller and
+            fee treasury.
+          </li>
+          <li>
+            <strong>2:25-2:50 Technical proof:</strong> Show the Anchor program
+            functions and devnet smoke proof covering create, buy, tracking,
+            receipt confirmation, and Supabase status sync.
+          </li>
+          <li>
+            <strong>2:50-3:00 Close:</strong> "We are starting with Breakpoint
+            and Colosseum drops, then expanding to Superteam and Solana event
+            shelves."
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Submission Readiness Checklist</h2>
+        <ul>
+          <li>Deploy the Next app to a public URL with devnet configuration.</li>
+          <li>Use devnet program <code>BWM5Sppg3Qu2mZCGM9ZiwWxDe9st3y4x3rb4Yur7Hauj</code> in the final submission.</li>
+          <li>Push source code to a public GitHub repo and confirm README setup instructions render clearly.</li>
+          <li>Upload <code>docs/submissions/video/merchplace-demo-video.m4v</code> or the MOV export to YouTube/Loom and paste the public link.</li>
+          <li>Prepare the Legends invite code and sign in with X.</li>
+          <li>Confirm final submission before clicking any external submit button.</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

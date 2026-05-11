@@ -1,0 +1,56 @@
+{
+  "name": "app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test:auth": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/auth.test.mjs",
+    "test:display": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/solanaDisplay.test.mjs",
+    "test:health": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/health.test.mjs",
+    "test:trust": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/escrowTrust.test.mjs",
+    "test:supply": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/eventSupply.test.mjs",
+    "test:policy": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/disputePolicy.test.mjs",
+    "test:shipping": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/shippingMethods.test.mjs",
+    "test:shipping-persistence": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/shippingPersistence.test.mjs",
+    "test:image-uploads": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/imageUploads.test.mjs",
+    "test:publish-smoke": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/publishSmoke.test.mjs",
+    "test:status-sync": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/listingStatusSync.test.mjs",
+    "test:listing-verification": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/listingVerification.test.mjs",
+    "test:localnet-setup": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/localnetE2eSetup.test.mjs",
+    "test:mainnet-ready": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/mainnetReadiness.test.mjs",
+    "test:spl-token-compat": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/splTokenCompat.test.mjs",
+    "test:wallet-funding": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/walletFunding.test.mjs",
+    "test:supabase-ready": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/supabaseReadiness.test.mjs",
+    "test:e2e-ready": "node --test --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/e2eReadiness.test.mjs",
+    "e2e:readiness": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/e2e-readiness.mjs",
+    "e2e:publish-smoke": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/localnet-publish-smoke.mjs",
+    "mainnet:check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/mainnet-check.mjs",
+    "supabase:check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/supabase-check.mjs",
+    "localnet:e2e-setup": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/localnet-e2e-setup.mjs"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.32.1",
+    "@noble/curves": "^1.9.7",
+    "@solana/wallet-adapter-react": "^0.15.39",
+    "@solana/wallet-adapter-react-ui": "^0.9.39",
+    "@solana/web3.js": "^1.98.4",
+    "@supabase/supabase-js": "^2.103.0",
+    "next": "^16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.3",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "8.5.10"
+  }
+}

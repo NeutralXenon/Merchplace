@@ -1,0 +1,238 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+  text-decoration: none;
+  color: inherit;
+  animation: fadeIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.imageLink,
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.imageLink:focus-visible,
+.titleLink:focus-visible {
+  outline: 2px solid var(--solana-green);
+  outline-offset: 4px;
+}
+
+.imageContainer {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  background:
+    linear-gradient(135deg, rgba(245, 236, 220, 0.08), transparent 46%),
+    repeating-linear-gradient(90deg, rgba(245, 236, 220, 0.04) 0 1px, transparent 1px 12px),
+    var(--bg-card);
+}
+
+.merchShape {
+  position: relative;
+  width: 88px;
+  height: 72px;
+  border: 1px solid rgba(245, 236, 220, 0.18);
+  border-radius: 20px 20px 10px 10px;
+  background: linear-gradient(180deg, rgba(255, 250, 241, 0.12), rgba(255, 250, 241, 0.035));
+}
+
+.merchShape::before,
+.merchShape::after {
+  content: '';
+  position: absolute;
+  top: 13px;
+  width: 28px;
+  height: 38px;
+  border: 1px solid rgba(245, 236, 220, 0.15);
+  background: rgba(255, 250, 241, 0.035);
+}
+
+.merchShape::before {
+  left: -22px;
+  transform: rotate(18deg);
+  border-radius: 12px 5px 8px 14px;
+}
+
+.merchShape::after {
+  right: -22px;
+  transform: rotate(-18deg);
+  border-radius: 5px 12px 14px 8px;
+}
+
+.neck {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 32px;
+  height: 18px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(245, 236, 220, 0.18);
+  border-top: 0;
+  border-radius: 0 0 18px 18px;
+  background: var(--bg-primary);
+}
+
+.print {
+  position: absolute;
+  left: 50%;
+  top: 38px;
+  width: 22px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-radius: var(--radius-full);
+  background: var(--solana-green);
+  opacity: 0.65;
+}
+
+.placeholderLabel {
+  justify-self: center;
+  color: var(--text-muted);
+  font-size: var(--font-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.statusBadge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+}
+
+.content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.eventTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  align-self: flex-start;
+  font-size: var(--font-xs);
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+}
+
+a.eventTag:hover {
+  color: var(--solana-green);
+}
+
+.eventDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--solana-green);
+}
+
+.title {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.titleLink:hover {
+  color: var(--solana-green);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+.condition {
+  color: var(--text-secondary);
+}
+
+.divider {
+  color: var(--border-subtle);
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.priceAmount {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: -0.04em;
+}
+
+.usdcBadge {
+  font-size: 10px;
+}
+
+.shipping {
+  max-width: 58%;
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  line-height: 1.35;
+  text-align: right;
+}

@@ -1,0 +1,212 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(17, 16, 14, 0.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 1000;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.24));
+  transition:
+    filter var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.logo:hover .logoMark {
+  filter:
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.24))
+    drop-shadow(0 0 12px rgba(143, 235, 195, 0.16));
+  transform: translateY(-1px);
+}
+
+.logoText {
+  font-size: var(--font-lg);
+  font-weight: 820;
+  color: var(--text-primary);
+  letter-spacing: -0.045em;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.link {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--text-primary);
+  background: var(--bg-glass);
+}
+
+.linkActive {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.networkBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  font-size: var(--font-xs);
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.networkBadge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+  border-radius: var(--radius-full);
+  background: currentColor;
+}
+
+.networkDevnet {
+  color: var(--status-escrow);
+}
+
+.networkTestnet,
+.networkLocalnet {
+  color: var(--text-secondary);
+}
+
+.networkMainnet {
+  color: var(--solana-green);
+}
+
+/* Override wallet adapter button styles */
+.walletBtn {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-hover) !important;
+  border-radius: var(--radius-md) !important;
+  font-family: var(--font-family) !important;
+  font-weight: 600 !important;
+  font-size: var(--font-sm) !important;
+  height: 40px !important;
+  padding: 0 20px !important;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast) !important;
+}
+
+.walletBtn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-glow-purple) !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    gap: var(--space-sm);
+    padding: 0 var(--space-md);
+  }
+
+  .links {
+    flex: 1;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+  }
+
+  .link {
+    min-height: 40px;
+    padding: 8px 10px;
+    font-size: var(--font-xs);
+  }
+
+  .walletBtn {
+    height: 38px !important;
+    padding: 0 12px !important;
+    max-width: 118px !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .logo {
+    gap: 6px;
+  }
+
+  .logoMark {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+
+  .logoText {
+    font-size: var(--font-md);
+  }
+
+  .networkBadge {
+    padding: 0;
+    width: 32px;
+    justify-content: center;
+    color: var(--status-escrow);
+    font-size: 0;
+  }
+
+  .networkBadge::before {
+    margin-right: 0;
+  }
+
+  .walletBtn {
+    max-width: 104px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .logoText {
+    display: none;
+  }
+}
