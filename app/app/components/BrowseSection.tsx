@@ -43,7 +43,7 @@ export function BrowseSection() {
 
   // Try fetching from API on mount
   const loadListings = useCallback(async () => {
-    const filters: ListingFilters = {};
+    const filters: ListingFilters = { status: 'available' };
     if (eventFilter !== 'All Events') filters.event = eventFilter;
     if (categoryFilter !== 'All Categories') filters.category = categoryFilter;
     if (conditionFilter !== 'All Conditions') filters.condition = conditionFilter;
